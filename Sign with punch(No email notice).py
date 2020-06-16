@@ -9,6 +9,7 @@ def main_handler(event, context):
 
 
     # 浏览器访问后复制结果替换{}的内容
+    #或者自行使用md5加密工具替换pwd中内容
     # https://music.cloudsvip.club/api.php?do=getSign&uin=账号&pwd=密码
     data= {'uin': '账号','pwd': 'e10adc3949ba59abbe56e057f20f883e'}
     req = requests.post(login_url, data = data ) 
