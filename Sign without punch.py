@@ -40,13 +40,13 @@ my_user='xxxxxx@qq.com'               # 收件人邮箱账号(账号B,填写需�
 # 可选值：
 #   False 不发送
 #   True 发送
-success_send_mail_status = False;
+success_send_mail_status = True;
 
 # 签到失败是否发送邮件提醒，默认设置不发送
 # 可选值：
 #   False 不发送
 #   True 发送
-fail_send_mail_status = False;
+fail_send_mail_status = True;
 
 '''
     填入账号密码，加密pwd获取方式如下
@@ -140,17 +140,6 @@ def main_handler(event, context):
         PCResult = str(signPcJsonObj['msg'])
         PCCode = str(signJsonObj['code'])
     ##-------------------------------- 签到功能END-------------------------------- 
-
-
-    ##-------------------------------- 打卡功能START-------------------------------- 
-    # 此处代码已注释,不提供打卡功能,如需打卡功能,请另建云函数
-    # daka = requests.post(daka_url, cookies = cookies)
-    # dakaJsonObj = json.loads(daka.text)
-    # if dakaJsonObj['code'] == 200:
-    #     result += '打卡成功: ' + str(dakaJsonObj['count']) + '首'
-    # else:
-    #     result += '打卡失败: 未知错误'
-    ##-------------------------------- 打卡功能END-------------------------------- 
 
 
     if sign_status and signpc_status:
